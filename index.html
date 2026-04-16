@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="GermanMD — India's first service offering German medical expertise, second opinions, and patient education for Indian patients. Online consultations with German-trained physicians."/>
+<meta name="keywords" content="German medical second opinion India, German doctor India, medical second opinion online India, patient education India, German healthcare India"/>
+<meta property="og:title" content="GermanMD — German Medical Expertise for Indian Patients"/>
+<meta property="og:description" content="Get a trusted second medical opinion from a German-trained physician. Clear written reports within 48 hours. Fully online."/>
+<meta property="og:type" content="website"/>
+<title>GermanMD — German Medical Expertise for Indian Patients</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --navy: #0B1F3A;
+    --navy-mid: #162d52;
+    --gold: #C9A84C;
+    --gold-light: #e8c97a;
+    --cream: #F9F6F0;
+    --white: #ffffff;
+    --text: #1a1a2e;
+    --muted: #5a6a7a;
+    --border: #dde4ec;
+    --green: #25D366;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* ── ANNOUNCEMENT BAR ── */
+  .announcement-bar {
+    background: var(--gold);
+    color: var(--navy);
+    text-align: center;
+    padding: 0.55rem 1rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+  }
+  .announcement-bar a {
+    color: var(--navy);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5%;
+    height: 72px;
+    background: rgba(11,31,58,0.98);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--white);
+    letter-spacing: 0.5px;
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--gold); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    color: rgba(255,255,255,0.82);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta {
+    background: var(--gold) !important;
+    color: var(--navy) !important;
+    padding: 0.5rem 1.2rem !important;
+    border-radius: 4px;
+    font-weight: 700 !important;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--gold-light) !important; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: var(--navy);
+    display: flex; align-items: center;
+    padding: 100px 5% 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: 0; right: 0;
+    width: 55%; height: 100%;
+    background: linear-gradient(135deg, #162d52 0%, #0d2340 60%, #091828 100%);
+    clip-path: polygon(12% 0, 100% 0, 100% 100%, 0% 100%);
+  }
+  .hero-bg-text {
+    position: absolute;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(80px, 14vw, 180px);
+    font-weight: 700;
+    color: rgba(201,168,76,0.04);
+    right: 2%; top: 50%;
+    transform: translateY(-50%);
+    line-height: 1; letter-spacing: -4px;
+    pointer-events: none; user-select: none;
+  }
+  .hero-content {
+    position: relative; z-index: 2;
+    max-width: 660px;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: rgba(201,168,76,0.12);
+    border: 1px solid rgba(201,168,76,0.35);
+    color: var(--gold);
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.8rem; font-weight: 600;
+    letter-spacing: 1px; text-transform: uppercase;
+    margin-bottom: 1.8rem;
+    animation: fadeUp 0.6s ease both;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+    color: var(--white);
+    line-height: 1.18; font-weight: 700;
+    margin-bottom: 1.4rem;
+    animation: fadeUp 0.7s 0.1s ease both;
+  }
+  .hero h1 em { font-style: normal; color: var(--gold); }
+  .hero p {
+    font-size: 1.08rem;
+    color: rgba(255,255,255,0.72);
+    line-height: 1.75; max-width: 520px;
+    margin-bottom: 2.4rem; font-weight: 300;
+    animation: fadeUp 0.7s 0.2s ease both;
+  }
+  .hero-actions {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    animation: fadeUp 0.7s 0.3s ease both;
+  }
+  .btn-primary {
+    background: var(--gold); color: var(--navy);
+    padding: 0.85rem 2rem; border-radius: 5px;
+    font-weight: 700; font-size: 0.95rem;
+    text-decoration: none; letter-spacing: 0.3px;
+    transition: all 0.2s; display: inline-block;
+    cursor: pointer; border: none;
+  }
+  .btn-primary:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(201,168,76,0.3);
+  }
+  .btn-outline {
+    border: 1.5px solid rgba(255,255,255,0.35);
+    color: var(--white); padding: 0.85rem 2rem;
+    border-radius: 5px; font-weight: 500; font-size: 0.95rem;
+    text-decoration: none; transition: all 0.2s; display: inline-block;
+  }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+  .hero-stats {
+    display: flex; gap: 2.5rem; margin-top: 3.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    animation: fadeUp 0.7s 0.4s ease both;
+  }
+  .stat-item h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.9rem; color: var(--gold); font-weight: 700;
+  }
+  .stat-item p {
+    font-size: 0.8rem; color: rgba(255,255,255,0.5);
+    margin: 0; line-height: 1.4;
+  }
+
+  /* ── FLOATING WHATSAPP ── */
+  .float-whatsapp {
+    position: fixed; bottom: 2rem; right: 2rem; z-index: 999;
+    background: var(--green); color: white;
+    width: 58px; height: 58px;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 1.7rem; text-decoration: none;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+    transition: all 0.2s;
+    animation: pulse 2.5s infinite;
+  }
+  .float-whatsapp:hover { transform: scale(1.1); box-shadow: 0 8px 30px rgba(37,211,102,0.55); }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.45); }
+    50% { box-shadow: 0 4px 30px rgba(37,211,102,0.7); }
+  }
+
+  /* ── TRUST BAR ── */
+  .trust-bar {
+    background: var(--cream);
+    padding: 1.4rem 5%;
+    display: flex; align-items: center; justify-content: center;
+    gap: 3rem; flex-wrap: wrap;
+    border-bottom: 1px solid var(--border);
+  }
+  .trust-item {
+    display: flex; align-items: center; gap: 0.6rem;
+    font-size: 0.85rem; color: var(--navy-mid); font-weight: 500;
+  }
+  .trust-icon { color: var(--gold); font-size: 1rem; }
+
+  /* ── SECTION BASE ── */
+  section { padding: 90px 5%; }
+  .section-label {
+    display: inline-block;
+    font-size: 0.75rem; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1rem;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    color: var(--navy); line-height: 1.25; font-weight: 700;
+  }
+  .section-sub {
+    font-size: 1rem; color: var(--muted);
+    line-height: 1.75; max-width: 560px; margin-top: 0.8rem;
+  }
+
+  /* ── PROBLEM ── */
+  .problem { background: var(--white); }
+  .problem-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 5rem; align-items: center; margin-top: 4rem;
+  }
+  .problem-cards { display: flex; flex-direction: column; gap: 1.2rem; }
+  .problem-card {
+    display: flex; gap: 1.2rem; align-items: flex-start;
+    padding: 1.4rem; border: 1px solid var(--border);
+    border-radius: 10px; transition: all 0.25s;
+  }
+  .problem-card:hover {
+    border-color: var(--gold);
+    box-shadow: 0 4px 20px rgba(201,168,76,0.1);
+    transform: translateX(4px);
+  }
+  .problem-card-icon {
+    font-size: 1.6rem; flex-shrink: 0;
+    width: 48px; height: 48px;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(11,31,58,0.05); border-radius: 8px;
+  }
+  .problem-card h4 { font-weight: 600; color: var(--navy); margin-bottom: 0.3rem; font-size: 0.97rem; }
+  .problem-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.6; }
+  .problem-solution {
+    background: var(--navy); border-radius: 16px;
+    padding: 2.5rem; color: var(--white);
+  }
+  .problem-solution h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem; margin-bottom: 1rem; color: var(--white);
+  }
+  .problem-solution h3 span { color: var(--gold); }
+  .problem-solution p { font-size: 0.95rem; color: rgba(255,255,255,0.7); line-height: 1.75; margin-bottom: 1.5rem; }
+  .solution-list { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; }
+  .solution-list li {
+    display: flex; align-items: center; gap: 0.7rem;
+    font-size: 0.9rem; color: rgba(255,255,255,0.85);
+  }
+  .solution-list li::before { content: '✓'; color: var(--gold); font-weight: 700; font-size: 1rem; }
+
+  /* ── SERVICES ── */
+  .services { background: var(--cream); }
+  .services-header {
+    display: flex; justify-content: space-between;
+    align-items: flex-end; margin-bottom: 3rem; flex-wrap: wrap; gap: 1rem;
+  }
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .service-card {
+    background: var(--white); border-radius: 14px;
+    padding: 2.2rem; border: 1px solid var(--border);
+    transition: all 0.3s; position: relative; overflow: hidden;
+  }
+  .service-card::after {
+    content: ''; position: absolute;
+    bottom: 0; left: 0; right: 0; height: 3px;
+    background: var(--gold); transform: scaleX(0);
+    transform-origin: left; transition: transform 0.3s;
+  }
+  .service-card:hover { box-shadow: 0 12px 40px rgba(11,31,58,0.1); transform: translateY(-4px); }
+  .service-card:hover::after { transform: scaleX(1); }
+  .service-num { font-family: 'Playfair Display', serif; font-size: 3rem; color: rgba(201,168,76,0.15); font-weight: 700; line-height: 1; margin-bottom: 1rem; }
+  .service-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+  .service-card h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; color: var(--navy); margin-bottom: 0.8rem; font-weight: 700; }
+  .service-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.2rem; }
+  .service-tag { display: inline-block; background: rgba(11,31,58,0.06); color: var(--navy); padding: 0.3rem 0.8rem; border-radius: 50px; font-size: 0.75rem; font-weight: 600; }
+  .service-price {
+    display: block; margin-top: 1rem;
+    font-size: 0.82rem; color: var(--muted);
+    border-top: 1px solid var(--border); padding-top: 1rem;
+  }
+
+  /* ── HOW IT WORKS ── */
+  .how { background: var(--white); }
+  .steps {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 0; margin-top: 4rem; position: relative;
+  }
+  .steps::before {
+    content: ''; position: absolute;
+    top: 36px; left: 12.5%; right: 12.5%; height: 2px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    z-index: 0;
+  }
+  .step { text-align: center; padding: 0 1.5rem; position: relative; z-index: 1; }
+  .step-num {
+    width: 72px; height: 72px; border-radius: 50%;
+    background: var(--navy); color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1.5rem; border: 3px solid var(--gold);
+  }
+  .step h4 { font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; font-size: 0.97rem; }
+  .step p { font-size: 0.85rem; color: var(--muted); line-height: 1.65; }
+
+  /* ── WHY GERMANY ── */
+  .why { background: var(--navy); color: var(--white); }
+  .why .section-title { color: var(--white); }
+  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; margin-top: 3rem; }
+  .why-left p { font-size: 1.02rem; color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 2rem; }
+  .why-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+  .why-stat { background: rgba(255,255,255,0.05); border: 1px solid rgba(201,168,76,0.2); border-radius: 10px; padding: 1.5rem; }
+  .why-stat h3 { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--gold); font-weight: 700; }
+  .why-stat p { font-size: 0.82rem; color: rgba(255,255,255,0.55); margin-top: 0.2rem; line-height: 1.4; }
+  .why-points { display: flex; flex-direction: column; gap: 1.2rem; }
+  .why-point {
+    display: flex; gap: 1rem; align-items: flex-start;
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px; padding: 1.3rem;
+  }
+  .why-point-icon { font-size: 1.4rem; flex-shrink: 0; }
+  .why-point h4 { font-weight: 600; color: var(--white); margin-bottom: 0.25rem; font-size: 0.95rem; }
+  .why-point p { font-size: 0.85rem; color: rgba(255,255,255,0.55); line-height: 1.6; margin: 0; }
+
+  /* ── PATIENT EDUCATION ── */
+  .education { background: var(--cream); }
+  .education-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+  .edu-card {
+    background: var(--white); border-radius: 14px;
+    padding: 2rem; border: 1px solid var(--border);
+    transition: all 0.3s;
+  }
+  .edu-card:hover { box-shadow: 0 8px 30px rgba(11,31,58,0.08); transform: translateY(-3px); }
+  .edu-card-icon { font-size: 2.2rem; margin-bottom: 1rem; display: block; }
+  .edu-card h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: var(--navy); margin-bottom: 0.7rem; font-weight: 700; }
+  .edu-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
+  .edu-coming-soon {
+    display: inline-block; margin-top: 1rem;
+    background: rgba(201,168,76,0.12); color: var(--gold);
+    border: 1px solid rgba(201,168,76,0.3);
+    padding: 0.25rem 0.75rem; border-radius: 50px;
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+  }
+
+  /* ── ABOUT ── */
+  .about { background: var(--white); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 5rem; align-items: center; margin-top: 3rem; }
+  .about-img-placeholder {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+    border-radius: 16px; aspect-ratio: 3/4;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    color: rgba(255,255,255,0.4); font-size: 0.85rem;
+    text-align: center; padding: 2rem;
+    border: 2px dashed rgba(201,168,76,0.3); gap: 1rem;
+  }
+  .about-img-placeholder span { font-size: 3rem; }
+  .about-content .section-label { margin-bottom: 0.5rem; }
+  .about-content h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 2.5vw, 2.2rem); color: var(--navy); line-height: 1.25; margin-bottom: 1.2rem; font-weight: 700; }
+  .about-content p { font-size: 0.97rem; color: var(--muted); line-height: 1.8; margin-bottom: 1rem; }
+  .credentials { display: flex; flex-direction: column; gap: 0.7rem; margin-top: 1.5rem; }
+  .credential { display: flex; align-items: center; gap: 0.8rem; font-size: 0.88rem; color: var(--navy); font-weight: 500; }
+  .credential::before { content: '🇩🇪'; font-size: 1rem; }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials { background: var(--cream); }
+  .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+  .testimonial-card { border: 1px solid var(--border); border-radius: 14px; padding: 2rem; position: relative; background: var(--white); }
+  .quote-mark { font-family: 'Playfair Display', serif; font-size: 4rem; color: var(--gold); line-height: 0.5; margin-bottom: 1rem; display: block; }
+  .testimonial-card p { font-size: 0.92rem; color: var(--muted); line-height: 1.75; margin-bottom: 1.5rem; font-style: italic; }
+  .testimonial-author { display: flex; align-items: center; gap: 0.8rem; }
+  .author-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--navy); display: flex; align-items: center; justify-content: center; color: var(--gold); font-weight: 700; font-size: 0.9rem; flex-shrink: 0; }
+  .author-info h5 { font-size: 0.88rem; font-weight: 700; color: var(--navy); }
+  .author-info span { font-size: 0.78rem; color: var(--muted); }
+
+  /* ── FAQ ── */
+  .faq { background: var(--white); }
+  .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 3rem; }
+  .faq-item { background: var(--cream); border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem; }
+  .faq-item h4 { font-weight: 700; color: var(--navy); margin-bottom: 0.6rem; font-size: 0.95rem; }
+  .faq-item p { font-size: 0.88rem; color: var(--muted); line-height: 1.65; }
+
+  /* ── CTA ── */
+  .cta-section {
+    background: linear-gradient(135deg, var(--navy) 0%, #0d2a4a 100%);
+    padding: 100px 5%; text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .cta-section::before {
+    content: ''; position: absolute;
+    top: -50%; left: -10%; width: 60%; height: 200%;
+    background: radial-gradient(ellipse, rgba(201,168,76,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .cta-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 3rem); color: var(--white); margin-bottom: 1rem; position: relative; }
+  .cta-section h2 span { color: var(--gold); }
+  .cta-section > p { color: rgba(255,255,255,0.65); font-size: 1.05rem; max-width: 500px; margin: 0 auto 2.5rem; line-height: 1.7; }
+  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .whatsapp-btn {
+    background: var(--green); color: var(--white);
+    padding: 0.85rem 2rem; border-radius: 5px;
+    font-weight: 700; font-size: 0.95rem;
+    text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;
+    transition: all 0.2s;
+  }
+  .whatsapp-btn:hover { background: #1db954; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,0.3); }
+  .email-btn {
+    background: rgba(255,255,255,0.1);
+    border: 1.5px solid rgba(255,255,255,0.3);
+    color: var(--white); padding: 0.85rem 2rem;
+    border-radius: 5px; font-weight: 600; font-size: 0.95rem;
+    text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;
+    transition: all 0.2s;
+  }
+  .email-btn:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* ── FOOTER ── */
+  footer { background: #060f1d; padding: 4rem 5% 2rem; color: rgba(255,255,255,0.5); }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+  .footer-brand h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--white); margin-bottom: 0.8rem; }
+  .footer-brand h3 span { color: var(--gold); }
+  .footer-brand p { font-size: 0.88rem; line-height: 1.7; max-width: 300px; }
+  .footer-contact { margin-top: 1.2rem; display: flex; flex-direction: column; gap: 0.5rem; }
+  .footer-contact a { color: rgba(255,255,255,0.55); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+  .footer-contact a:hover { color: var(--gold); }
+  .footer-col h4 { color: var(--white); font-size: 0.9rem; font-weight: 600; margin-bottom: 1rem; letter-spacing: 0.5px; }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 0.6rem; }
+  .footer-col ul li a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+  .footer-col ul li a:hover { color: var(--gold); }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; flex-wrap: wrap; gap: 0.5rem; }
+  .footer-disclaimer { font-size: 0.78rem; color: rgba(255,255,255,0.3); max-width: 700px; line-height: 1.6; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.05); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .services-grid, .education-grid, .testimonials-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 768px) {
+    .problem-grid, .why-grid, .about-grid, .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .services-grid, .education-grid, .testimonials-grid, .faq-grid { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr 1fr; }
+    .steps::before { display: none; }
+    .nav-links { display: none; }
+    .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
+    .trust-bar { gap: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── ANNOUNCEMENT BAR ── -->
+<div class="announcement-bar">
+  🇩🇪 Now accepting patients across India &nbsp;·&nbsp; 
+  <a href="mailto:dr.mrudulsankhe@gmail.com">Book your consultation today</a>
+</div>
+
+<!-- ── FLOATING WHATSAPP ── -->
+<a href="https://wa.me/919818949929" class="float-whatsapp" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
+
+<!-- ── NAVIGATION ── -->
+<nav>
+  <a href="#home" class="nav-logo">German<span>MD</span></a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#education">Patient Education</a></li>
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#why">Why German?</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="mailto:dr.mrudulsankhe@gmail.com" class="nav-cta">Book Consultation</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero" id="home">
+  <div class="hero-bg-text">MD</div>
+  <div class="hero-content">
+    <div class="hero-badge">🇩🇪 India's First German Medical Expert Service</div>
+    <h1>
+      German Medical Expertise,<br/>
+      <em>Now Available to Every Indian Patient</em>
+    </h1>
+    <p>
+      Get a trusted second medical opinion, personalised patient education, and expert consultation — from a physician trained and practising in Germany's world-class healthcare system. No travel required.
+    </p>
+    <div class="hero-actions">
+      <a href="mailto:dr.mrudulsankhe@gmail.com" class="btn-primary">Book a Consultation →</a>
+      <a href="#how" class="btn-outline">How It Works</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <h3>Top 5</h3>
+        <p>German healthcare<br/>system globally</p>
+      </div>
+      <div class="stat-item">
+        <h3>48hr</h3>
+        <p>Written opinion<br/>turnaround</p>
+      </div>
+      <div class="stat-item">
+        <h3>100%</h3>
+        <p>Independent &<br/>unbiased review</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TRUST BAR ── -->
+<div class="trust-bar">
+  <div class="trust-item"><span class="trust-icon">✅</span> German-Trained Physician</div>
+  <div class="trust-item"><span class="trust-icon">✅</span> Evidence-Based Medicine</div>
+  <div class="trust-item"><span class="trust-icon">✅</span> Written Reports in 48 Hours</div>
+  <div class="trust-item"><span class="trust-icon">✅</span> Fully Online — No Travel</div>
+  <div class="trust-item"><span class="trust-icon">✅</span> Strict Medical Confidentiality</div>
+</div>
+
+<!-- ── PROBLEM + SOLUTION ── -->
+<section class="problem" id="problem">
+  <span class="section-label">Why GermanMD Exists</span>
+  <h2 class="section-title">Indian Patients Deserve More Than a Second Guess</h2>
+  <p class="section-sub">Complex diagnoses. Rushed consultations. Conflicting advice. You deserve clear, expert guidance.</p>
+  <div class="problem-grid">
+    <div class="problem-cards">
+      <div class="problem-card">
+        <div class="problem-card-icon">😕</div>
+        <div>
+          <h4>Confused by your diagnosis?</h4>
+          <p>Medical reports are full of jargon. Most patients leave the clinic with unanswered questions and growing anxiety.</p>
+        </div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-card-icon">⚠️</div>
+        <div>
+          <h4>Unsure about your treatment plan?</h4>
+          <p>Being recommended surgery or long-term medication is alarming. You need an independent expert to validate — or question — that plan.</p>
+        </div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-card-icon">🏥</div>
+        <div>
+          <h4>Can't access international expertise?</h4>
+          <p>Flying to Germany for a second opinion costs lakhs. Until now, world-class German medical expertise was out of reach for most Indian patients.</p>
+        </div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-card-icon">📋</div>
+        <div>
+          <h4>Need someone to explain your reports?</h4>
+          <p>Lab results, scan findings, and specialist reports often go unexplained. You have the right to fully understand your own health.</p>
+        </div>
+      </div>
+    </div>
+    <div class="problem-solution">
+      <h3>GermanMD is the <span>bridge</span> between you and world-class care.</h3>
+      <p>We bring the rigour, precision, and patient-first approach of German medicine directly to you — wherever you are in India.</p>
+      <ul class="solution-list">
+        <li>Physician trained and practising in Germany</li>
+        <li>Network of specialist German-trained doctors</li>
+        <li>Evidence-based, protocol-driven case review</li>
+        <li>Clear written report in plain language</li>
+        <li>Fully confidential. Fully independent.</li>
+        <li>Available from your home, via a secure online platform</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ── SERVICES ── -->
+<section class="services" id="services">
+  <div class="services-header">
+    <div>
+      <span class="section-label">What We Offer</span>
+      <h2 class="section-title">Three Ways We Can Help You</h2>
+    </div>
+    <a href="mailto:dr.mrudulsankhe@gmail.com" class="btn-primary">Get Started →</a>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-num">01</div>
+      <span class="service-icon">🔬</span>
+      <h3>Second Medical Opinion</h3>
+      <p>Submit your reports, scans, and medical history. A German-trained physician reviews your case thoroughly and provides a clear, structured written opinion — so you can make confident decisions about your treatment.</p>
+      <p><strong style="color:var(--navy); font-size:0.85rem;">Ideal for:</strong> Cancer diagnosis, cardiac conditions, neurological disorders, orthopaedic surgery decisions, and any major diagnosis.</p>
+      <span class="service-tag">Written Report Included</span>
+    </div>
+    <div class="service-card">
+      <div class="service-num">02</div>
+      <span class="service-icon">📚</span>
+      <h3>Patient Education &amp; Counselling</h3>
+      <p>We explain your diagnosis, test results, and treatment options in simple, clear language. You should never leave a consultation more confused than when you arrived. We make sure that doesn't happen.</p>
+      <p><strong style="color:var(--navy); font-size:0.85rem;">Ideal for:</strong> Newly diagnosed patients, those managing chronic illness, and anyone who wants to understand their health better.</p>
+      <span class="service-tag">One-on-One Session</span>
+    </div>
+    <div class="service-card">
+      <div class="service-num">03</div>
+      <span class="service-icon">🩺</span>
+      <h3>Expert Medical Consultation</h3>
+      <p>A direct online consultation with our German-trained physician. Review your symptoms, history, and current treatment. Receive a professional assessment aligned with German clinical standards and international best practices.</p>
+      <p><strong style="color:var(--navy); font-size:0.85rem;">Ideal for:</strong> Complex cases, treatment planning, pre-surgery evaluation, and chronic disease management.</p>
+      <span class="service-tag">Online | Secure | Confidential</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW IT WORKS ── -->
+<section class="how" id="how">
+  <div style="text-align:center;">
+    <span class="section-label">The Process</span>
+    <h2 class="section-title">Simple. Secure. Swift.</h2>
+    <p class="section-sub" style="margin: 0.8rem auto 0;">Getting a world-class second opinion takes four easy steps.</p>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h4>Book Your Consultation</h4>
+      <p>Email us or message on WhatsApp. Tell us about your condition and what kind of help you need.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h4>Share Your Documents</h4>
+      <p>Securely send your medical reports, scans, test results, and previous prescriptions via a link we provide.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h4>Expert Review</h4>
+      <p>Our German-trained physician carefully reviews your case. Complex cases may involve our specialist network.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <h4>Receive Your Report</h4>
+      <p>Within 48–72 hours, receive a clear written medical opinion you can share with your treating doctor.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY GERMANY ── -->
+<section class="why" id="why">
+  <div class="why-grid">
+    <div class="why-left">
+      <span class="section-label">Why German Medicine?</span>
+      <h2 class="section-title" style="color:white; margin-bottom:1.2rem;">A Healthcare System Built on Precision and Rigour</h2>
+      <p>Germany is consistently ranked among the world's top five healthcare systems. Its doctors undergo some of the most demanding training globally — combining deep scientific knowledge with strict clinical protocols and a strong culture of evidence-based medicine.</p>
+      <p>German medicine is systematic and thorough. Patients receive more time, more investigation, and more clarity. That is the standard we bring to you.</p>
+      <div class="why-stats">
+        <div class="why-stat"><h3>Top 4</h3><p>Healthcare system worldwide (WHO)</p></div>
+        <div class="why-stat"><h3>~400</h3><p>University hospitals in Germany</p></div>
+        <div class="why-stat"><h3>6yr+</h3><p>Rigorous medical training in Germany</p></div>
+        <div class="why-stat"><h3>100%</h3><p>Evidence-based, guideline-driven approach</p></div>
+      </div>
+    </div>
+    <div class="why-points">
+      <div class="why-point">
+        <div class="why-point-icon">🔬</div>
+        <div>
+          <h4>Evidence-Based Diagnosis</h4>
+          <p>Every opinion is grounded in current clinical guidelines and peer-reviewed research — not guesswork or habit.</p>
+        </div>
+      </div>
+      <div class="why-point">
+        <div class="why-point-icon">🛡️</div>
+        <div>
+          <h4>Fully Independent</h4>
+          <p>We have no ties to hospitals, pharmaceutical companies, or diagnostic labs. Your health — and only your health — guides our recommendations.</p>
+        </div>
+      </div>
+      <div class="why-point">
+        <div class="why-point-icon">🤝</div>
+        <div>
+          <h4>Patient-First Philosophy</h4>
+          <p>German medical culture places enormous value on informed consent and patient autonomy. You deserve to fully understand your own health — and we make sure you do.</p>
+        </div>
+      </div>
+      <div class="why-point">
+        <div class="why-point-icon">🌐</div>
+        <div>
+          <h4>International Standards, Local Access</h4>
+          <p>You no longer need to fly abroad or spend lakhs to access world-class medical expertise. It is now available from your home.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PATIENT EDUCATION ── -->
+<section class="education" id="education">
+  <div style="text-align:center; margin-bottom:0.5rem;">
+    <span class="section-label">Patient Education</span>
+    <h2 class="section-title">Understand Your Health. Fully.</h2>
+    <p class="section-sub" style="margin: 0.8rem auto 0; text-align:center;">Knowledge is the most powerful tool a patient can have. We are building a comprehensive library of trusted health education resources — in plain language, grounded in German clinical standards.</p>
+  </div>
+  <div class="education-grid">
+    <div class="edu-card">
+      <span class="edu-card-icon">🫀</span>
+      <h3>Cardiology</h3>
+      <p>Understanding heart disease, cardiac risk factors, what your ECG means, and how to manage cardiac conditions effectively.</p>
+      <span class="edu-coming-soon">Coming Soon</span>
+    </div>
+    <div class="edu-card">
+      <span class="edu-card-icon">🧬</span>
+      <h3>Oncology</h3>
+      <p>What a cancer diagnosis means, how to read a pathology report, treatment options, and questions to ask your oncologist.</p>
+      <span class="edu-coming-soon">Coming Soon</span>
+    </div>
+    <div class="edu-card">
+      <span class="edu-card-icon">🧠</span>
+      <h3>Neurology</h3>
+      <p>Understanding MRI reports, neurological symptoms, and what a neurology diagnosis means for your daily life.</p>
+      <span class="edu-coming-soon">Coming Soon</span>
+    </div>
+    <div class="edu-card">
+      <span class="edu-card-icon">🩸</span>
+      <h3>Diabetes &amp; Endocrinology</h3>
+      <p>How to read your HbA1c, understanding blood sugar management, thyroid conditions, and metabolic health.</p>
+      <span class="edu-coming-soon">Coming Soon</span>
+    </div>
+    <div class="edu-card">
+      <span class="edu-card-icon">🦴</span>
+      <h3>Orthopaedics</h3>
+      <p>When does a joint really need surgery? Understanding fractures, spinal conditions, and rehabilitation.</p>
+      <span class="edu-coming-soon">Coming Soon</span>
+    </div>
+    <div class="edu-card">
+      <span class="edu-card-icon">📹</span>
+      <h3>Video Explainers</h3>
+      <p>Short, clear video guides from our German-trained physicians — explaining medical concepts in everyday language.</p>
+      <span class="edu-coming-soon">Coming Soon</span>
+    </div>
+  </div>
+  <div style="text-align:center; margin-top:2.5rem;">
+    <p style="font-size:0.9rem; color:var(--muted); margin-bottom:1rem;">Want to be notified when new patient education content goes live?</p>
+    <a href="mailto:dr.mrudulsankhe@gmail.com?subject=Patient Education Updates" class="btn-primary">Notify Me →</a>
+  </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="about-img-placeholder">
+      <span>👨‍⚕️</span>
+      <p><strong style="color:rgba(255,255,255,0.7);">Dr. Mrudul Sankhe</strong><br/><span style="font-size:0.78rem; color:rgba(255,255,255,0.4);">Replace with your professional photo</span></p>
+    </div>
+    <div class="about-content">
+      <span class="section-label">About GermanMD</span>
+      <h2>Bringing Germany's Medical Standards to Indian Patients</h2>
+      <p>GermanMD was founded with a single purpose: to make German medical expertise genuinely accessible to patients in India.</p>
+      <p>As a physician trained and experienced within Germany's top-tier healthcare system, I have seen first-hand what a rigorous, evidence-based, patient-centred approach to medicine can achieve. I founded GermanMD to bridge that gap — so that every Indian patient, regardless of where they live, can access the same quality of medical opinion available in Germany.</p>
+      <p>Our growing network of German-trained specialist physicians means that complex cases receive the right expert — whether in cardiology, oncology, neurology, orthopaedics, or any other field.</p>
+      <p><strong style="color: var(--navy);">We do not replace your local doctor. We empower you to work with them more effectively.</strong></p>
+      <div class="credentials">
+        <div class="credential">Medical degree with training in Germany</div>
+        <div class="credential">Clinical experience in German hospitals</div>
+        <div class="credential">Network of German-trained specialist physicians</div>
+        <div class="credential">Fully compliant with medical ethics and patient confidentiality</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ── -->
+<section class="testimonials" id="testimonials">
+  <div style="text-align:center; margin-bottom:1rem;">
+    <span class="section-label">Patient Experiences</span>
+    <h2 class="section-title">What Our Patients Say</h2>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <span class="quote-mark">"</span>
+      <p>After my mother's cancer diagnosis, we were overwhelmed and confused. GermanMD reviewed her entire case and gave us a clear, written second opinion. It gave us the confidence to choose the right treatment path.</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">RA</div>
+        <div class="author-info">
+          <h5>R. Agarwal</h5>
+          <span>Delhi — Oncology Second Opinion</span>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <span class="quote-mark">"</span>
+      <p>My cardiologist recommended immediate surgery. I was not sure. GermanMD's independent review suggested a less invasive approach first. Six months later, I avoided surgery entirely.</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">SM</div>
+        <div class="author-info">
+          <h5>S. Mehta</h5>
+          <span>Mumbai — Cardiac Consultation</span>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <span class="quote-mark">"</span>
+      <p>The patient education session was extraordinary. For the first time, I truly understood my diabetes management plan. The doctor explained everything in plain language — with patience and genuine care.</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">PK</div>
+        <div class="author-info">
+          <h5>P. Kumar</h5>
+          <span>Bangalore — Patient Education</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p style="text-align:center; font-size:0.8rem; color:var(--muted); margin-top:1.5rem;">* Patient names abbreviated and details generalised to protect privacy.</p>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="faq" id="faq">
+  <div style="text-align:center; margin-bottom:0.5rem;">
+    <span class="section-label">Common Questions</span>
+    <h2 class="section-title">Frequently Asked Questions</h2>
+  </div>
+  <div class="faq-grid">
+    <div class="faq-item">
+      <h4>Is GermanMD a replacement for my doctor?</h4>
+      <p>No. We provide an independent expert opinion to help you make more informed decisions. We always recommend working closely with your treating physician.</p>
+    </div>
+    <div class="faq-item">
+      <h4>How do I share my medical documents securely?</h4>
+      <p>After booking via email or WhatsApp, we provide a secure method for sharing your documents. All records are handled with strict medical confidentiality.</p>
+    </div>
+    <div class="faq-item">
+      <h4>How long does it take to receive my report?</h4>
+      <p>Most cases are reviewed within 48–72 hours. Complex cases requiring specialist input may take slightly longer — we will always inform you in advance.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Which conditions do you cover?</h4>
+      <p>We cover most medical specialties including oncology, cardiology, neurology, orthopaedics, gastroenterology, endocrinology, and more. Contact us to confirm your specific case.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Is the consultation available across India?</h4>
+      <p>Yes. Our service is fully online and available to patients anywhere in India — and to Indian patients living abroad.</p>
+    </div>
+    <div class="faq-item">
+      <h4>What language will my report be in?</h4>
+      <p>Your written report will be in clear, plain English. We can also arrange a follow-up call to walk you through the findings in Hindi or your preferred language.</p>
+    </div>
+    <div class="faq-item">
+      <h4>How do I contact GermanMD?</h4>
+      <p>You can reach us by email at <a href="mailto:dr.mrudulsankhe@gmail.com" style="color:var(--navy); font-weight:600;">dr.mrudulsankhe@gmail.com</a> or via WhatsApp at <a href="https://wa.me/919818949929" style="color:var(--navy); font-weight:600;">+91 98189 49929</a>. We respond within 24 hours.</p>
+    </div>
+    <div class="faq-item">
+      <h4>How much does a consultation cost?</h4>
+      <p>Pricing depends on the type and complexity of the service. Please contact us directly for a quote — we are committed to making our service accessible and fairly priced.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="cta-section" id="contact">
+  <h2>Your Health Deserves a <span>Second Look.</span></h2>
+  <p>Book a consultation today. Get a clear, expert opinion — grounded in German medical standards — within 48 hours.</p>
+  <div class="cta-buttons">
+    <a href="mailto:dr.mrudulsankhe@gmail.com?subject=Consultation Request — GermanMD" class="btn-primary" style="font-size:1rem; padding: 1rem 2.2rem;">✉️ Book via Email →</a>
+    <a href="https://wa.me/919818949929" class="whatsapp-btn" target="_blank" rel="noopener">💬 WhatsApp Us</a>
+  </div>
+  <p style="margin-top:2rem; font-size:0.82rem; color:rgba(255,255,255,0.4);">
+    📧 dr.mrudulsankhe@gmail.com &nbsp;|&nbsp; 📱 +91 98189 49929 &nbsp;|&nbsp; Response within 24 hours
+  </p>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h3>German<span>MD</span></h3>
+      <p>India's first service bringing German medical expertise to Indian patients — through second opinions, patient education, and expert consultation.</p>
+      <div class="footer-contact">
+        <a href="mailto:dr.mrudulsankhe@gmail.com">✉️ dr.mrudulsankhe@gmail.com</a>
+        <a href="https://wa.me/919818949929" target="_blank" rel="noopener">💬 +91 98189 49929 (WhatsApp)</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">Second Medical Opinion</a></li>
+        <li><a href="#services">Patient Education</a></li>
+        <li><a href="#services">Expert Consultation</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Information</h4>
+      <ul>
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="#why">Why German Medicine</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-disclaimer">
+    <strong style="color:rgba(255,255,255,0.4);">Medical Disclaimer:</strong> GermanMD provides independent medical opinions and patient education services. Our services do not constitute primary medical care or an emergency service. Always consult your treating physician before making any changes to your treatment plan. In a medical emergency, contact your local emergency services immediately.
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 GermanMD. All rights reserved.</span>
+    <span>Designed for Indian patients. Grounded in German standards.</span>
+  </div>
+</footer>
+
+</body>
+</html>
